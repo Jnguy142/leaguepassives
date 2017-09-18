@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import makePassiveApiCall from './passive_api/passive_api.js';
+import my_api_call from './my_api_call/my_api_call.js';
 
 class App extends Component {
   constructor(props) {
@@ -8,7 +8,7 @@ class App extends Component {
   }
 
   getRandomPassive () {
-    makePassiveApiCall();
+    my_api_call();
   }
 
   render() {
