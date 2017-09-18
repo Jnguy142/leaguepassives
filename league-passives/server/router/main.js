@@ -1,6 +1,6 @@
 var router = require('express').Router();
-var questionRouter = require('./questionRouter.js');
+var usersRouter = require('./usersRouter.js');
 
-router.use('/question', questionRouter);
+router.use('/users', usersRouter);
 
 module.exports = router;

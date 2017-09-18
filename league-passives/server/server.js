@@ -1,15 +1,9 @@
 var express = require('express'); //require express to use server
 var bodyParser = require('body-parser'); //tool to extract data from requests
 var router = require('./router/main.js'); //handle routing
-
+var db = require('./database/maindb.js');//database
 var server = express(); //instantiate an instance of express
 
-var logger = ((req, res, next) => {
-    console.log(req.url);
-    next();
-});
-
-server.use(logger);
 server.use(bodyParser.json()); //middleware function to parse data
 server.use('/api', router); //middleware for routing
 
