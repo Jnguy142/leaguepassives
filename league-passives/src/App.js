@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import makePassiveApiCall from './passive_api/passive_api.js';
 
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.getRandomPassive.bind(this);
+  }
+
+  getRandomPassive () {
+    makePassiveApiCall();
+  }
+
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+          <button type="button" onClick={this.getRandomPassive}>Get Random Passive</button>
       </div>
     );
   }
