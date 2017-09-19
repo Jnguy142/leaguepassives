@@ -1,11 +1,11 @@
 module.exports = [
     {
-        username: 'leaguefan',
+        username: 'shabbyjerkin',
         score: 10
     },
     {
         username: 'casualpleb',
-        score: 0
+        score: 3
     },
     {
         username: 'oombadu',

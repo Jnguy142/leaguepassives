@@ -3,12 +3,15 @@ import my_api_calls from './my_api_call/my_api_call.js';
 import Passiveview from './views/passiveView.js';
 import Answerbox from './views/answerBox.js';
 import Userstatus from './views/userStatus.js';
+var url = 'http://localhost:3000/';
+var path = 'api/users/create';
+var path2 = 'api/users/update';
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state ={
-      username: 'anonymous',
+      username: 'casualpleb',
       score: 0,
       passiveUrl: 'http://ddragon.leagueoflegends.com/cdn/6.24.1/img/passive/ViPassive.png',
       champ: 'vi',
@@ -19,20 +22,34 @@ class App extends Component {
     this.setUser = this.setUser.bind(this);
   }
 
+  componentDidMount () {
+    var userState = {
+      username: this.state.username,
+      score: 0,
+    }
+    my_api_calls.user_api_call(this, userState, url + path, 'POST');
+  }
+
   setUser (event) {
     var user = document.getElementById("username").value;
-    my_api_calls.user_api_call(this, user);
-    console.log('hello there,', user);
-    this.setState({username: user});
+    var userState = {
+      username: user,
+      score: 0,
+    }
+    my_api_calls.user_api_call(this, userState, url + path, 'POST');
     event.preventDefault();
     event.stopPropagation();
   }
 
   checkAnswer (event) {
     var guess = document.getElementById("answer").value.toLowerCase();
+    var userState = {
+      username: this.state.username,
+      score: this.state.score,
+    }
     if(guess === this.state.champ) {
-      this.setState({score: this.state.score + 1, answer:''});
-      console.log('nice job!', this.state.score);
+      my_api_calls.user_api_call(this, userState, url + path2, 'PUT');
+      document.getElementById("answer").value = "";
       this.getRandomPassive();
     } else {
       console.log('you need to play league more!');
