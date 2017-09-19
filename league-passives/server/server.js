@@ -6,6 +6,11 @@ var server = express(); //instantiate an instance of express
 var path = require('path');
 
 server.use(bodyParser.json()); //middleware function to parse data
+server.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
 server.use('/api', router); //middleware for routing
 server.use(express.static(path.resolve(__dirname, '../build')));
 
