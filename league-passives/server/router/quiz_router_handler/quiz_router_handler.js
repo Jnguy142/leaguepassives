@@ -5,7 +5,7 @@ var leagueData = path.resolve(__dirname,
 
 var getRandomPassive = (obj) => {
     var keys = Object.keys(obj);
-    var randNum = Math.floor(Math.Random() * 1000) % keys.length;
+    var randNum = Math.floor(Math.random() * 1000) % keys.length;
     return obj[keys[randNum]];
 };
 
