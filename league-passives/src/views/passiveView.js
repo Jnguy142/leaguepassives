@@ -1,0 +1,17 @@
+import React from 'react';
+
+class Passiveview extends React.Component {
+    constructor(props) {
+        super(props);
+    }
+
+    render () {
+        return (
+            <div>
+                <img src = {this.props.passiveUrl}/>
+            </div>
+        );
+    }
+}
+
+export default Passiveview;
