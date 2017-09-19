@@ -1,5 +1,5 @@
 var url = 'http://localhost:3000/';
-var path = 'api/passivequiz';
+var path = 'api/quiz';
 var axios = require('axios');
 
 var my_api_call = function () {
