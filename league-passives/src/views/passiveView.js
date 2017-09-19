@@ -8,7 +8,7 @@ class Passiveview extends React.Component {
     render () {
         return (
             <div>
-                <img src = {this.props.passiveUrl}/>
+                <img src = {this.props.passiveUrl} alt=""/>
             </div>
         );
     }
