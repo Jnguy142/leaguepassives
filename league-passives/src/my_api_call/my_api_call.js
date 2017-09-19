@@ -33,7 +33,10 @@ var my_api_calls = {
         .catch((err) => {
             console.log('there was an error trying make that api call from the client');
         })
-    }
+    },
+    allusers_api_call : (app, user, url, method) => {
+
+    },
 }
 
 export default my_api_calls;

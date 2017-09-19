@@ -3,6 +3,7 @@ import my_api_calls from './my_api_call/my_api_call.js';
 import Passiveview from './views/passiveView.js';
 import Answerbox from './views/answerBox.js';
 import Userstatus from './views/userStatus.js';
+import Allusers from './views/allUsers.js';
 var url = 'http://localhost:3000/';
 var path = 'api/users/create';
 var path2 = 'api/users/update';
@@ -69,6 +70,7 @@ class App extends Component {
         <Passiveview passiveUrl={this.state.passiveUrl}/>
         <Answerbox answer={this.state.answer} checkAnswer = {this.checkAnswer}/>
         <button type="button" onClick={this.getRandomPassive}>Get Random Passive</button>
+        <Allusers />
       </div>
     );
   }
